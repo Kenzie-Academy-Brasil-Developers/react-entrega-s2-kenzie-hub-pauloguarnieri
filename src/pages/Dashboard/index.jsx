@@ -27,6 +27,7 @@ function Dashboard() {
 
     return (
         <div>DASHBOARD
+            <h2>{`Bem vindo ${user.name}`}</h2>
             <div>
                 {techs.map((item, index) => <div key={index}><p>{item.title}</p><p>{item.status}</p></div>)}
             </div>
