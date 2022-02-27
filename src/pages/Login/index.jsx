@@ -44,10 +44,10 @@ function Login({ authenticated, setAuthenticated }) {
                 <form onSubmit={handleSubmit(onSubmitFunction)} className='formulario'>
                     <h2>Login</h2>
                     <label>Email</label>
-                    <input type="text" {...register('email')} />
+                    <input type="text" placeholder='Email' {...register('email')} />
                     {errors.email?.message}
                     <label>Senha</label>
-                    <input type="text" {...register('password')} />
+                    <input type="text" placeholder='Senha' {...register('password')} />
                     <button type='submit'>Entrar</button>
                 </form>
                 <span>Ainda não possui uma conta?</span>

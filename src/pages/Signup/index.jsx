@@ -44,19 +44,19 @@ function Signup({ authenticated }) {
             <div>
                 <form onSubmit={handleSubmit(onSubmitFunction)}>
                     <h2>Cadastro</h2>
-                    <input type="text" {...register('name')} />
+                    <input type="text" placeholder='Nome' {...register('name')} />
                     {errors.name?.message}
-                    <input type="text" {...register('email')} />
+                    <input type="text" placeholder='Email' {...register('email')} />
                     {errors.email?.message}
-                    <input type="text" {...register('password')} />
+                    <input type="text" placeholder='Senha' {...register('password')} />
                     {errors.password?.message}
-                    <input type="text" {...register('passwordConfirm')} />
+                    <input type="text" placeholder='Confirme sua senha' {...register('passwordConfirm')} />
                     {errors.passwordConfirm?.message}
-                    <input type="text" {...register('contact')} />
+                    <input type="text" placeholder='Linkendin' {...register('contact')} />
                     {errors.contact?.message}
-                    <input type="text" {...register('bio')} />
+                    <input type="text" placeholder='Fale sobre você...' {...register('bio')} />
                     {errors.bio?.message}
-                    <input type='text' {...register('course_module')} />
+                    <input type='text' placeholder='Modulo' {...register('course_module')} />
                     {errors.course_module?.message}
                     <button type='submit'>Enviar</button>
                 </form>
