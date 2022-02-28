@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import './styles.css';
+import Header from '../../components/Header';
 
 function Signup({ authenticated }) {
 
@@ -40,26 +42,29 @@ function Signup({ authenticated }) {
     }
 
     return (
-        <div className='signup-page'>
-            <div>
-                <form onSubmit={handleSubmit(onSubmitFunction)}>
-                    <h2>Cadastro</h2>
-                    <input type="text" placeholder='Nome' {...register('name')} />
-                    {errors.name?.message}
-                    <input type="text" placeholder='Email' {...register('email')} />
-                    {errors.email?.message}
-                    <input type="text" placeholder='Senha' {...register('password')} />
-                    {errors.password?.message}
-                    <input type="text" placeholder='Confirme sua senha' {...register('passwordConfirm')} />
-                    {errors.passwordConfirm?.message}
-                    <input type="text" placeholder='Linkendin' {...register('contact')} />
-                    {errors.contact?.message}
-                    <input type="text" placeholder='Fale sobre você...' {...register('bio')} />
-                    {errors.bio?.message}
-                    <input type='text' placeholder='Modulo' {...register('course_module')} />
-                    {errors.course_module?.message}
-                    <button type='submit'>Enviar</button>
-                </form>
+        <div className='signup-all'>
+            <Header />
+            <div className='signup-page'>
+                <div className='signup-container'>
+                    <form onSubmit={handleSubmit(onSubmitFunction)} className='formulario'>
+                        <h2>Cadastro</h2>
+                        <input type="text" placeholder='Nome' {...register('name')} />
+                        {errors.name?.message}
+                        <input type="text" placeholder='Email' {...register('email')} />
+                        {errors.email?.message}
+                        <input type="text" placeholder='Senha' {...register('password')} />
+                        {errors.password?.message}
+                        <input type="text" placeholder='Confirme sua senha' {...register('passwordConfirm')} />
+                        {errors.passwordConfirm?.message}
+                        <input type="text" placeholder='Linkendin' {...register('contact')} />
+                        {errors.contact?.message}
+                        <input type="text" placeholder='Fale sobre você...' {...register('bio')} />
+                        {errors.bio?.message}
+                        <input type='text' placeholder='Modulo' {...register('course_module')} />
+                        {errors.course_module?.message}
+                        <button type='submit'>Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

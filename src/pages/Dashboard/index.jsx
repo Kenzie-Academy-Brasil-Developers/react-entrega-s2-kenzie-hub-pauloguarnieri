@@ -1,5 +1,9 @@
+import './styles.css'
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
+import CardList from '../../components/CardList';
+import Header from '../../components/Header';
+
 
 function Dashboard() {
 
@@ -24,12 +28,21 @@ function Dashboard() {
     }
 
 
-
     return (
-        <div>DASHBOARD
-            <h2>{`Bem vindo ${user.name}`}</h2>
-            <div>
-                {techs.map((item, index) => <div key={index}><p>{item.title}</p><p>{item.status}</p></div>)}
+        <div className='page-dashboard'>
+            <Header />
+            <div className='main-welcome'>
+                {/* <h2>{`Olá, ${user.name}`}</h2> */}
+                <div>
+                    {/* <h3>{user.course_module}</h3> */}
+                </div>
+            </div>
+            <div className='page-main' >
+                <div className='tech-add'>
+                    <h3>Tecnologias</h3>
+                    <button>+</button>
+                </div>
+                <CardList techs={techs} />
             </div>
             <button onClick={() => getls()}>AQUI</button>
         </div>

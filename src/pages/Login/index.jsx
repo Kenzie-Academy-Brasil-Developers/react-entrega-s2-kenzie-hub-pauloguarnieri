@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import './styles.css';
 
 function Login({ authenticated, setAuthenticated }) {
 
@@ -39,10 +40,10 @@ function Login({ authenticated, setAuthenticated }) {
 
     return (
         <div className='login-page'>
-            <h1>LOGIN</h1>
-            <div>
+            <h1>Kenzie Hub</h1>
+            <div className='login-container'>
+                <h2>Login</h2>
                 <form onSubmit={handleSubmit(onSubmitFunction)} className='formulario'>
-                    <h2>Login</h2>
                     <label>Email</label>
                     <input type="text" placeholder='Email' {...register('email')} />
                     {errors.email?.message}

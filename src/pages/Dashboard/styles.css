@@ -1,0 +1,46 @@
+
+
+.page-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color:#121214;
+    box-sizing: border-box;
+}
+.page-dashboard h2 {
+    color: white;
+}
+.page-main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 10%;
+    width: 100%;
+}
+.main-welcome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3% 10%;
+    border-bottom: 1px solid grey;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+}
+.tech-add {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 24px 0;
+    color: white;
+    justify-content: space-between;
+}
+.tech-add button {
+    color: white;
+    background-color: #212529;
+    border: 0;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
