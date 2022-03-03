@@ -1,9 +1,9 @@
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import api from '../../services/api';
 import { useState } from 'react';
 import './styles.css';
-import { useForm } from 'react-hook-form';
-import api from '../../services/api';
-import { toast } from 'react-toastify';
-import axios from 'axios';
+
 
 
 function Card({ item: { title, status, id }, loadTechs }) {
@@ -15,9 +15,6 @@ function Card({ item: { title, status, id }, loadTechs }) {
     const [modalEdit, setModalEdit] = useState(false);
 
     function editTech(tech) {
-        console.log(tech);
-        console.log(token);
-        console.log(id, 'id')
 
         api.put(`/users/techs/${id}`, tech,
             { headers: { Authorization: `Bearer ${token}` } })
@@ -29,8 +26,6 @@ function Card({ item: { title, status, id }, loadTechs }) {
     }
 
     function deleteTech(id) {
-        console.log(id)
-        console.log(token)
 
         api.delete(`/users/techs/${id}`,
             {

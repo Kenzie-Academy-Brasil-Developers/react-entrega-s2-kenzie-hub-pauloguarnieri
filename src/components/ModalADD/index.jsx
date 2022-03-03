@@ -11,9 +11,6 @@ function ModalAddTech({ setModalADD, loadTechs }) {
     const [token] = useState(JSON.parse(localStorage.getItem('@KenzieHub:token')) || '')
 
     function addTech(tech) {
-        console.log('tech', tech)
-        console.log(token)
-
 
         api.post('/users/techs', tech,
 
@@ -28,8 +25,6 @@ function ModalAddTech({ setModalADD, loadTechs }) {
             })
             .catch((err) => toast.error('Nome de tecnologia invalido'))
     }
-
-
 
     return (
         <div className='modal-layer'>

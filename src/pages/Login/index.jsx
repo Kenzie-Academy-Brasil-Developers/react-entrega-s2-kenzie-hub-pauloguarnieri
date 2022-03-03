@@ -20,7 +20,6 @@ function Login({ authenticated, setAuthenticated }) {
     const history = useHistory();
 
     const onSubmitFunction = (data) => {
-        console.log(data)
         api.post('/sessions', data)
             .then(response => {
                 const { token, user } = response.data;

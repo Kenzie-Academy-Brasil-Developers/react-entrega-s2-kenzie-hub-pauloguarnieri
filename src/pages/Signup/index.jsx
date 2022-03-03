@@ -28,7 +28,6 @@ function Signup({ authenticated, logout }) {
     const onSubmitFunction = ({ name, email, password, contact, bio, course_module }) => {
         const user = { name, email, password, contact, bio, course_module };
 
-        console.log(user)
         api.post('/users', user)
             .then(_ => {
                 toast.success('sucesso ao criar a conta')

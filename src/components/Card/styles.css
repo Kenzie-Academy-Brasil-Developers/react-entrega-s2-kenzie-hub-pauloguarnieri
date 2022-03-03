@@ -34,6 +34,7 @@
     background-color: #212529;
     border: 0;
     border-radius: 3px;
+    align-items: center;
 }
 .modal-edit-title {
     display: flex;
@@ -47,6 +48,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     color: white;
+    width: 100%;
 }
 .modal-edit form {
     display: flex;
@@ -54,6 +56,7 @@
     padding: 16px;
     box-sizing: border-box;
     color: white;
+    width: 100%;
 }
 .modal-edit form label {
     font-size: 12px;
@@ -90,6 +93,7 @@
     margin: 16px 0;
     width: 46%;
     padding: 0 10px;
+    width: 90%;
 }
 .modal-edit-deleteButton:hover {
     background-color: #FF427F;
@@ -102,7 +106,7 @@
     background-color: #59323F;
     font-size: 12px;
     margin: 16px 0;
-    width: 46%;
+    width: 100%;
     padding: 0 10px;
 }
 .modal-edit form button:hover {
