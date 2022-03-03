@@ -23,11 +23,11 @@ function Login({ authenticated, setAuthenticated }) {
         console.log(data)
         api.post('/sessions', data)
             .then(response => {
-                setAuthenticated(true);
                 const { token, user } = response.data;
 
                 localStorage.setItem('@KenzieHub:token', JSON.stringify(token))
                 localStorage.setItem('@KenzieHub:user', JSON.stringify(user))
+                setAuthenticated(true);
 
                 return history.push('/dashboard')
             })

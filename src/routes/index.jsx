@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Dashboard from '../pages/Dashboard';
 import Signup from '../pages/Signup';
@@ -7,6 +7,8 @@ function Routes() {
 
     const [authenticated, setAuthenticated] = useState(false);
 
+    const history = useHistory();
+
     useEffect(() => {
         const token = JSON.parse(localStorage.getItem('@KenzieHub:token'));
         if (token) {
@@ -14,16 +16,27 @@ function Routes() {
         }
     }, [authenticated]);
 
+
+    function logout() {
+        localStorage.clear();
+        if (authenticated) {
+            setAuthenticated(false);
+            <Redirect to='/' />
+        } else {
+            history.push('/');
+        }
+    }
+
     return (
         <Switch>
             <Route exact path='/'>
                 <Login authenticated={authenticated} setAuthenticated={setAuthenticated} />
             </Route>
             <Route path='/signup'>
-                <Signup authenticated={authenticated} />
+                <Signup authenticated={authenticated} logout={logout} />
             </Route>
             <Route path='/dashboard'>
-                <Dashboard />
+                <Dashboard authenticated={authenticated} logout={logout} />
             </Route>
         </Switch>
     )

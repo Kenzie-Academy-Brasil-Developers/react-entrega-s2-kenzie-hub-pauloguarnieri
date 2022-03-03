@@ -3,48 +3,56 @@ import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import CardList from '../../components/CardList';
 import Header from '../../components/Header';
+import { Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import ModalAddTech from '../../components/ModalADD';
 
 
-function Dashboard() {
+function Dashboard({ authenticated, logout }) {
 
     const [techs, setTechs] = useState([]);
 
-    const user = JSON.parse(localStorage.getItem('@KenzieHub:user'))
+    const [modalADD, setModalADD] = useState(false);
 
-    useEffect(() => {
+    const [user] = useState(JSON.parse(localStorage.getItem('@KenzieHub:user')))
+
+
+    function loadTechs() {
         api.get(`/users/${user.id}`)
             .then(response => {
-                console.log(response.data.techs, 'response.data')
                 setTechs(response.data.techs)
-                console.log('techs', techs)
             })
+            .catch(err => toast.error('não deu'))
+    }
 
+    useEffect(() => {
+        loadTechs();
     }, [])
 
 
-    const getls = () => {
-        const oi = JSON.parse(localStorage.getItem('@KenzieHub:user'))
-        console.log(oi.id)
+    if (!authenticated) {
+        return <Redirect to='/' />
     }
-
 
     return (
         <div className='page-dashboard'>
-            <Header />
+            <Header logout={logout} />
             <div className='main-welcome'>
-                {/* <h2>{`Olá, ${user.name}`}</h2> */}
+                <h2>{`Olá, ${user.name}`}</h2>
                 <div>
-                    {/* <h3>{user.course_module}</h3> */}
+                    <h3>{user.course_module}</h3>
                 </div>
             </div>
             <div className='page-main' >
                 <div className='tech-add'>
-                    <h3>Tecnologias</h3>
-                    <button>+</button>
+                    <div className='tech-add-nav'>
+                        <h3>Tecnologias</h3>
+                        <button onClick={() => setModalADD(!modalADD)} >+</button>
+                    </div>
+                    {modalADD && <ModalAddTech setModalADD={setModalADD} loadTechs={loadTechs} />}
                 </div>
-                <CardList techs={techs} />
+                <CardList techs={techs} loadTechs={loadTechs} />
             </div>
-            <button onClick={() => getls()}>AQUI</button>
         </div>
     )
 }

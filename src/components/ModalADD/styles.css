@@ -1,22 +1,4 @@
-.card {
-    justify-content: space-between;
-    background-color: #121214;
-    box-sizing: border-box;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    padding: 6px;
-    margin: 2px;
-    width: 100%;
-    border: 0;
-}
-.card:hover {
-    cursor: pointer;
-    background-color: #343B41;
-}
-.modal-edit-layer {
+.modal-layer{
     background-color: rgba(0,0,0,0.5);
     width: 100vw;
     height: 150vh;
@@ -25,7 +7,7 @@
     justify-content: center;
     align-items: center;
 }
-.modal-edit {
+.modal-add {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -33,71 +15,64 @@
     background-color: #212529;
     border: 0;
     border-radius: 3px;
+
 }
-.modal-edit-title {
+.modal-add-title {
     display: flex;
     flex-direction: row;
     background-color: #343B41;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 12px;
+    padding: 6px 12px;
     box-sizing: border-box;
     border: 0;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     color: white;
 }
-.modal-edit-title button {
-    padding: 3px 7px;
-    border: 0;
-    border-radius: 3px;
-    color: #868E96;
-    background-color:#343B41 ;
-    margin: 0;
-}
-.modal-edit form {
+.modal-add form {
     display: flex;
     flex-direction: column;
     padding: 16px;
     box-sizing: border-box;
     color: white;
 }
-.modal-edit form label {
-    font-size: 12px;
-}
-.modal-edit form p {
+.modal-add form input {
     background-color: #343B41 ;
     border-radius: 3px;
     border: 1px solid #F8F9FA;
     height: 36px;
     box-sizing: border-box;
     margin: 12px 0;
-    display: flex;
-    align-items: center;
-    padding-left:8px;
-    font-size: 14px;
+    color: white;
+    font-size:14px;
+    padding-left: 8px;
 }
-.modal-edit form select {
+.modal-add select {
     background-color: #343b41;
     border-radius: 3px;
     border:1px solid #f8f9fa;
     height: 36px;
     box-sizing: border-box;
     margin: 12px 0;
-    color: white;
-    padding-left: 8px;
+    color:white;
 }
-.modal-edit-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.modal-add label {
+    font-size: 12px;
 }
-.modal-edit form button {
+.modal-add button {
     height: 38px;
     border-radius: 3px;
     border: 0;
     color: white;
     background-color: #FF577F;
     margin: 16px 0;
-    width: 46%;
+}
+.modal-add-title button {
+    padding: 3px 7px;
+    border: 0;
+    border-radius: 3px;
+    color: #868E96;
+    background-color:#343B41 ;
+    margin: 0;
 }

@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import './styles.css';
 import Header from '../../components/Header';
 
-function Signup({ authenticated }) {
+function Signup({ authenticated, logout }) {
 
     const schema = yup.object().shape({
         name: yup.string().required('Campo obrigatório'),
@@ -43,7 +43,7 @@ function Signup({ authenticated }) {
 
     return (
         <div className='signup-all'>
-            <Header />
+            <Header logout={logout} />
             <div className='signup-page'>
                 <div className='signup-container'>
                     <form onSubmit={handleSubmit(onSubmitFunction)} className='formulario'>

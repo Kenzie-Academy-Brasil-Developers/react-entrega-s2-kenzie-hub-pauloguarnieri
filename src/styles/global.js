@@ -18,7 +18,7 @@ export default createGlobalStyle`
         --grey1: #f8f9fa;
       }
     body: {
-        background: #121214;
+        background: var(--grey4);
         color: var(--grey1);
     }
     body, input, button {

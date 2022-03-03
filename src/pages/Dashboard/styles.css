@@ -31,16 +31,25 @@
 }
 .tech-add {
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.tech-add-nav {
+    display: flex;
     flex-direction: row;
     box-sizing: border-box;
     padding: 24px 0;
     color: white;
     justify-content: space-between;
+    width: 100%;
 }
-.tech-add button {
+.tech-add-nav button {
     color: white;
     background-color: #212529;
     border: 0;
     border-radius: 8px;
     padding: 6px 10px;
 }
+
