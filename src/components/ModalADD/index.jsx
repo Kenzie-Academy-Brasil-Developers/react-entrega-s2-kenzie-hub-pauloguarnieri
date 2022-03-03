@@ -24,7 +24,7 @@ function ModalAddTech({ setModalADD, loadTechs }) {
             })
             .then((response) => {
                 loadTechs()
-                console.log(response)
+                setModalADD(false)
             })
             .catch((err) => toast.error('Nome de tecnologia invalido'))
     }

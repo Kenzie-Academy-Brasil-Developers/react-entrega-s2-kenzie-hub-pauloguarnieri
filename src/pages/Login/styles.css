@@ -10,7 +10,7 @@
     background-color: #121214;
 }
 .login-page h1 {
-    color: palevioletred;
+    color: #FF427F;
     letter-spacing:0rem; 
     margin: 28px;
 }
@@ -39,6 +39,9 @@
     background-color: #868E96;
     margin: 17px 0;
 }
+.login-container button:hover {
+    background-color: #FF427F;
+}
 
 .formulario {
     display: flex;
@@ -66,4 +69,7 @@
     background-color: palevioletred;
     color: white;
     border-radius: 3px;
+}
+.formulario button:hover {
+    background-color: #FF427F;
 }

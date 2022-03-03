@@ -48,7 +48,7 @@ function Login({ authenticated, setAuthenticated }) {
                     <input type="text" placeholder='Email' {...register('email')} />
                     {errors.email?.message}
                     <label>Senha</label>
-                    <input type="text" placeholder='Senha' {...register('password')} />
+                    <input type="password" placeholder='Senha' {...register('password')} />
                     <button type='submit'>Entrar</button>
                 </form>
                 <span>Ainda não possui uma conta?</span>

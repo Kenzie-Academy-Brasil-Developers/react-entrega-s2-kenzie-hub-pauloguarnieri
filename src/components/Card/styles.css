@@ -11,6 +11,7 @@
     margin: 2px;
     width: 100%;
     border: 0;
+    font-size: 14px;
 }
 .card:hover {
     cursor: pointer;
@@ -47,14 +48,6 @@
     border-top-right-radius: 3px;
     color: white;
 }
-.modal-edit-title button {
-    padding: 3px 7px;
-    border: 0;
-    border-radius: 3px;
-    color: #868E96;
-    background-color:#343B41 ;
-    margin: 0;
-}
 .modal-edit form {
     display: flex;
     flex-direction: column;
@@ -87,17 +80,39 @@
     color: white;
     padding-left: 8px;
 }
-.modal-edit-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.modal-edit-deleteButton{
+    height: 38px;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    background-color: #868E96;
+    font-size: 12px;
+    margin: 16px 0;
+    width: 46%;
+    padding: 0 10px;
+}
+.modal-edit-deleteButton:hover {
+    background-color: #FF427F;
 }
 .modal-edit form button {
     height: 38px;
     border-radius: 3px;
     border: 0;
     color: white;
-    background-color: #FF577F;
+    background-color: #59323F;
+    font-size: 12px;
     margin: 16px 0;
     width: 46%;
+    padding: 0 10px;
+}
+.modal-edit form button:hover {
+    background-color: #FF427F;
+}
+.modal-edit-title button {
+    padding: 3px 7px;
+    border: 0;
+    border-radius: 3px;
+    color: #868E96;
+    background-color:#343B41 ;
+    margin: 0;
 }

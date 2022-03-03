@@ -20,23 +20,30 @@ function Card({ item: { title, status, id }, loadTechs }) {
         console.log(id, 'id')
 
         api.put(`/users/techs/${id}`, tech,
-            { headers: { Authorization: `Bearer${token}` } })
-            .then(response => loadTechs())
+            { headers: { Authorization: `Bearer ${token}` } })
+            .then(response => {
+                loadTechs()
+                setModalEdit(false)
+            })
             .catch(err => toast.error('algum erro ocorreu tente novamente'))
     }
 
     function deleteTech(id) {
         console.log(id)
         console.log(token)
-        console.log('click')
-        axios.delete(`/users/techs/${id}`,
+
+        api.delete(`/users/techs/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
             })
-            .then(response => toast.success('tecnologia apagada'))
-            .cactch(err => toast.error('um erro ocorreu'))
+            .then(response => {
+                toast.success('tecnologia apagada')
+                loadTechs()
+                setModalEdit(false)
+            })
+            .catch(err => toast.error('um erro ocorreu'))
     }
 
     return (
@@ -61,9 +68,9 @@ function Card({ item: { title, status, id }, loadTechs }) {
                                 <option value="Intermediário">Intermediário</option>
                                 <option value="Avançado">Avançado</option>
                             </select>
-                            <button type='submit'>Edit</button>
+                            <button type='submit'>Salvar alterações</button>
                         </form>
-                        <button onClick={() => deleteTech(id)}>Delete</button>
+                        <button className='modal-edit-deleteButton' onClick={() => deleteTech(id)}>Delete</button>
                     </div>
                 </div >}
         </>

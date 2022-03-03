@@ -52,15 +52,21 @@ function Signup({ authenticated, logout }) {
                         {errors.name?.message}
                         <input type="text" placeholder='Email' {...register('email')} />
                         {errors.email?.message}
-                        <input type="text" placeholder='Senha' {...register('password')} />
+                        <input type="password" placeholder='Senha' {...register('password')} />
                         {errors.password?.message}
-                        <input type="text" placeholder='Confirme sua senha' {...register('passwordConfirm')} />
+                        <input type="password" placeholder='Confirme sua senha' {...register('passwordConfirm')} />
                         {errors.passwordConfirm?.message}
                         <input type="text" placeholder='Linkendin' {...register('contact')} />
                         {errors.contact?.message}
                         <input type="text" placeholder='Fale sobre você...' {...register('bio')} />
                         {errors.bio?.message}
-                        <input type='text' placeholder='Modulo' {...register('course_module')} />
+                        <select {...register('course_module')}>
+                            <option value="Primeiro módulo (Introdução ao Frontend)">Primeiro módulo</option>
+                            <option value="Segundo módulo (Frontend Avançado)">Segundo módulo</option>
+                            <option value="Terceiro módulo (Introdução ao Backend)">Terceiro módulo</option>
+                            <option value="Quarto módulo (Backend Avançado)">Quarto módulo</option>
+                        </select>
+
                         {errors.course_module?.message}
                         <button type='submit'>Enviar</button>
                     </form>
